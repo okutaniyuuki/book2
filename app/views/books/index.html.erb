@@ -1,0 +1,36 @@
+
+ <div class="container">
+  <div class="row">
+
+
+  <div class="col-xs-3">
+   <%= render 'users/tenpre', book: @book, user:current_user %>
+  </div>
+
+  <div class="col-xs-9">
+     <h1>Books</h1>
+
+    <table class="table table-striped">
+     	<tr>
+     		 <th>  </th><th>title</th> <th>body</th>
+     	</tr>
+
+
+     <% @books.each do |book| %>
+       <tr>
+       <td><%= attachment_image_tag book.user, :profile_image,  class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size: "60x60" %></td>
+       <td><%= book.title %></td>
+       <td><%= book.body %></td>
+
+       </tr>
+  <% end %>
+
+     </table>
+    </div>
+   </div>
+ </div>
+
+
+
+
+

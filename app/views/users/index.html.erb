@@ -1,0 +1,35 @@
+
+
+<div class="class1">
+  <div class="class2">
+
+
+  <div class="col-xs-3">
+ <%= render 'users/tenpre', book: @book, user: @user %>
+ </div>
+ <div class="col-xs-9">
+<h2>Users</h2>
+
+ <table class="table table-striped table-condensed">
+     	<tr>
+     		<th>image</th> <th>name</th>
+     	</tr>
+
+
+      <% @users.each do |user| %>
+    <tr>
+       <td><%=  attachment_image_tag user, :profile_image, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size: "60x60" %></td>
+       <td><%= user.name  %></td>
+       <td><%= link_to "Show",user_path(user) %> </td>
+        </tr>
+    <% end %>
+
+   </table>
+ </div>
+</div>
+</div>
+
+
+
+
+

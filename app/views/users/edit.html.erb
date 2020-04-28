@@ -1,0 +1,29 @@
+
+<h1>User info</h1>
+
+
+
+
+<%= form_for current_user, url: {action: 'update'},class: "edit clearfix" do |f| %>
+ 
+    <h4 class="text1">Name</h4>
+
+
+    <%= f.text_field :name %>
+
+    <h4>Image</h4>
+
+    <%= f.attachment_field :profile_image %>
+
+
+    <br>
+
+    <h4 class="text1">Introduction</h4>
+    <%= f.text_area :introduction  %>
+
+   <br>
+
+
+    <%= f.submit "UpdateUser" %>
+
+<% end %>
